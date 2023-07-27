@@ -1,0 +1,248 @@
+@font-face {
+  font-family: intelone-mono-font-family-regular;
+  src: url(https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2)
+    format("woff2");
+  font-weight: 400;
+  font-weight: 700;
+  font-style: normal;
+}
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+body {
+  background-color: #000;
+}
+.wrap {
+  position: relative;
+  max-width: 750px;
+  margin: 0 auto;
+  height: 100vh;
+  background: center 0 / cover no-repeat url(images/bg.jpg);
+  overflow: hidden;
+  text-align: center;
+}
+.wrap .envelope {
+  width: auto;
+  max-width: none;
+  height: 100vh;
+  background: center/cover no-repeat url(images/env.jpg);
+  opacity: 0;
+  -webkit-animation: opacity2 5s ease-in-out 3s forwards;
+  animation: opacity2 5s ease-in-out 3s forwards;
+}
+.wrap .envelope::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(transparent),
+    color-stop(40%, #000),
+    color-stop(60%, #000),
+    to(transparent)
+  );
+  background: linear-gradient(
+    transparent 0%,
+    #000 40%,
+    #000 60%,
+    transparent 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-animation: opacity2 2s ease-in-out 9s forwards;
+  animation: opacity2 2s ease-in-out 9s forwards;
+}
+.wrap .envelope .dialog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.wrap .envelope .dialog > * {
+  position: relative;
+  z-index: 5;
+}
+.wrap .envelope .dialog-text {
+  width: 100%;
+  color: #fff;
+  font-family: intelone-mono-font-family-regular, sans-serif;
+  font-size: clamp(12.8px, 0px + 4vw, 30px);
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.wrap .envelope .member-card {
+  width: 70%;
+  padding: 2px;
+  position: relative;
+  -webkit-animation: opacity2 10s ease-in-out 27s forwards;
+  animation: opacity2 10s ease-in-out 27s forwards;
+  opacity: 0;
+}
+.wrap .envelope .member-card img {
+  position: relative;
+  z-index: 1;
+  border-radius: clamp(6.4px, 0px + 2vw, 15px);
+}
+.wrap .envelope .member-card .name {
+  font-size: clamp(12.8px, 0px + 4vw, 30px);
+  font-family: intelone-mono-font-family-regular, sans-serif;
+  font-weight: 700;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  color: #fff;
+  z-index: 6;
+}
+.wrap .envelope .member-card::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(6.8266666667px, 0px + 2.1333333333vw, 16px);
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(var(--rotate)),
+    color-stop(#1ae7d5),
+    color-stop(43%, #7648a3),
+    to(#4958a8)
+  );
+  background-image: linear-gradient(
+    var(--rotate),
+    #1ae7d5,
+    #7648a3 43%,
+    #4958a8
+  );
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  -webkit-animation: spin 2.5s linear infinite;
+  animation: spin 2.5s linear infinite;
+  opacity: 0.6;
+}
+.wrap .envelope .member-card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-filter: blur(calc(var(--card-height) / 6));
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(var(--rotate)),
+    color-stop(#1ae7d5),
+    color-stop(43%, #7648a3),
+    to(#4958a8)
+  );
+  background-image: linear-gradient(
+    var(--rotate),
+    #1ae7d5,
+    #7648a3 43%,
+    #4958a8
+  );
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  -webkit-animation: spin 2.5s linear infinite;
+  animation: spin 2.5s linear infinite;
+}
+.wrap .envelope .text01 {
+  -webkit-animation: opacity 5s ease-in-out 11s forwards;
+  animation: opacity 5s ease-in-out 11s forwards;
+}
+.wrap .envelope .text02 {
+  -webkit-animation: opacity 9s ease-in-out 17s forwards;
+  animation: opacity 9s ease-in-out 17s forwards;
+}
+@-webkit-keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes opacity2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opacity2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
