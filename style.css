@@ -38,6 +38,7 @@ body {
   background: center 0 / cover no-repeat url(images/bg.jpg);
   overflow: hidden;
   text-align: center;
+  animation: thunder 1.5s ease-in-out 0.3s forwards;
 }
 .wrap .envelope {
   width: auto;
@@ -268,6 +269,10 @@ body {
   -webkit-animation: opacity 9s ease-in-out 17s forwards;
   animation: opacity 9s ease-in-out 17s forwards;
 }
+.wrap .envelope .text03 {
+  -webkit-animation: opacity2 5s ease-in-out 11s forwards;
+  animation: opacity2 5s ease-in-out 11s forwards;
+}
 @-webkit-keyframes spin {
   0% {
     --rotate: 0deg;
@@ -320,5 +325,23 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes thunder {
+  0% {
+    background-position-x: center;
+  }
+
+  100% {
+    background-position-x: 52%;
+  }
+}
+@keyframes thunder {
+  0% {
+    background-position-x: center;
+  }
+
+  100% {
+    background-position-x: 52%;
   }
 }
