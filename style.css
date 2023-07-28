@@ -117,26 +117,57 @@ body {
   z-index: 1;
   border-radius: clamp(5.9733333333px, 0px + 1.8666666667vw, 14px);
 }
+.wrap .envelope .dialog-card .member-card::after {
+  content: "";
+  font-size: clamp(12.8px, 0px + 4vw, 30px);
+  color: #fff;
+  position: absolute;
+  bottom: clamp(12.8px, 0px + 4vw, 30px);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
 .wrap .envelope .dialog-card .member-card.DfuVr {
   background: center/100% no-repeat url(images/jw.jpg);
+}
+.wrap .envelope .dialog-card .member-card.DfuVr::after {
+  content: "JUNG-WON";
 }
 .wrap .envelope .dialog-card .member-card.oxTQw {
   background: center/100% no-repeat url(images/hs.jpg);
 }
+.wrap .envelope .dialog-card .member-card.oxTQw::after {
+  content: "HEE-SEUNG";
+}
 .wrap .envelope .dialog-card .member-card.ZG5Px {
   background: center/100% no-repeat url(images/js.jpg);
+}
+.wrap .envelope .dialog-card .member-card.ZG5Px::after {
+  content: "JAY";
 }
 .wrap .envelope .dialog-card .member-card.UJx2n {
   background: center/100% no-repeat url(images/jk.jpg);
 }
+.wrap .envelope .dialog-card .member-card.UJx2n::after {
+  content: "JAKE";
+}
 .wrap .envelope .dialog-card .member-card.DCMx7 {
   background: center/100% no-repeat url(images/sh.jpg);
+}
+.wrap .envelope .dialog-card .member-card.DCMx7::after {
+  content: "SUNG-HOON";
 }
 .wrap .envelope .dialog-card .member-card.jHKPx {
   background: center/100% no-repeat url(images/sn.jpg);
 }
+.wrap .envelope .dialog-card .member-card.jHKPx::after {
+  content: "SUNOO";
+}
 .wrap .envelope .dialog-card .member-card.l1wc1 {
   background: center/100% no-repeat url(images/nk.jpg);
+}
+.wrap .envelope .dialog-card .member-card.l1wc1::after {
+  content: "NI-NI";
 }
 .wrap .envelope .dialog-card::before {
   content: "";
@@ -149,13 +180,13 @@ body {
     left bottom,
     from(var(--rotate)),
     color-stop(#daddee),
-    color-stop(43%, #0f0020),
+    color-stop(43%, #7648a3),
     to(#4958a8)
   );
   background-image: linear-gradient(
     var(--rotate),
     #daddee,
-    #0f0020 43%,
+    #7648a3 43%,
     #4958a8
   );
   position: absolute;
@@ -165,6 +196,41 @@ body {
   -webkit-animation: spin 2.5s linear infinite;
   animation: spin 2.5s linear infinite;
   opacity: 0.8;
+}
+.wrap .envelope .dialog-card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-filter: blur(calc(var(--card-height) / 6));
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(var(--rotate)),
+    color-stop(#daddee),
+    color-stop(43%, #7648a3),
+    to(#4958a8)
+  );
+  background-image: linear-gradient(
+    var(--rotate),
+    #daddee,
+    #7648a3 43%,
+    #4958a8
+  );
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  -webkit-animation: spin 2.5s linear infinite;
+  animation: spin 2.5s linear infinite;
 }
 .wrap .envelope .text01 {
   -webkit-animation: opacity 5s ease-in-out 11s forwards;
