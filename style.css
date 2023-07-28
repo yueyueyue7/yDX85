@@ -126,6 +126,7 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
+  z-index: 2;
 }
 .wrap .envelope .dialog-card .member-card.DfuVr {
   background: center/100% no-repeat url(images/jw.jpg);
@@ -196,41 +197,6 @@ body {
   -webkit-animation: spin 2.5s linear infinite;
   animation: spin 2.5s linear infinite;
   opacity: 0.8;
-}
-.wrap .envelope .dialog-card::after {
-  position: absolute;
-  content: "";
-  top: calc(var(--card-height) / 6);
-  left: 0;
-  right: 0;
-  z-index: 0;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  -webkit-transform: scale(0.8);
-  transform: scale(0.8);
-  -webkit-filter: blur(calc(var(--card-height) / 6));
-  filter: blur(calc(var(--card-height) / 6));
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(var(--rotate)),
-    color-stop(#daddee),
-    color-stop(43%, #7648a3),
-    to(#4958a8)
-  );
-  background-image: linear-gradient(
-    var(--rotate),
-    #daddee,
-    #7648a3 43%,
-    #4958a8
-  );
-  opacity: 1;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-  -webkit-animation: spin 2.5s linear infinite;
-  animation: spin 2.5s linear infinite;
 }
 .wrap .envelope .text01 {
   -webkit-animation: opacity 5s ease-in-out 11s forwards;
